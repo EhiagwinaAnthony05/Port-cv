@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-export function Header() {
+import { Moon, Sun } from 'lucide-react';
+import PropTypes from 'prop-types';
+
+export function Header({ theme, onToggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -77,14 +80,32 @@ export function Header() {
         </a>
       </nav>
 
-      <button
-        type="button"
-        className="menu-button"
-        aria-expanded={isMenuOpen}
-        aria-controls="mobile-navigation"
-        onClick={() => setIsMenuOpen((currentValue) => !currentValue)}>
-        {isMenuOpen ? 'Close' : 'Menu'}
-      </button>
+      <div className="header-controls">
+        <button
+          type="button"
+          className="theme-button"
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          onClick={onToggleTheme}>
+          {theme === 'dark' ?
+          <>
+              <Sun size={15} aria-hidden="true" />
+              Light
+            </> :
+          <>
+              <Moon size={15} aria-hidden="true" />
+              Dark
+            </>}
+        </button>
+
+        <button
+          type="button"
+          className="menu-button"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen((currentValue) => !currentValue)}>
+          {isMenuOpen ? 'Close' : 'Menu'}
+        </button>
+      </div>
 
       <motion.nav
         id="mobile-navigation"
@@ -116,7 +137,18 @@ export function Header() {
         <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>
           Contact
         </a>
+        <button
+          type="button"
+          className="mobile-nav-link mobile-theme-button"
+          onClick={onToggleTheme}>
+          {theme === 'dark' ? 'Use Light Mode' : 'Use Dark Mode'}
+        </button>
       </motion.nav>
     </motion.header>);
 
 }
+
+Header.propTypes = {
+  theme: PropTypes.oneOf(['light', 'dark']).isRequired,
+  onToggleTheme: PropTypes.func.isRequired
+};

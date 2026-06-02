@@ -34,7 +34,7 @@
 .project-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(26, 26, 26, 0.1);
+  background: var(--project-overlay);
   opacity: 0;
   transition: opacity 0.45s ease;
 }
@@ -75,7 +75,7 @@
 
 .project-card-soon .project-overlay {
   opacity: 1;
-  background: rgba(11, 15, 16, 0.4);
+  background: var(--project-soon-overlay);
 }
 
 .project-card-soon:hover .project-image {
@@ -89,7 +89,7 @@
   z-index: 2;
   background: var(--rust);
   color: var(--offwhite);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--project-badge-border);
   border-radius: 999px;
   padding: 0.4rem 0.75rem;
   font-size: 0.72rem;
@@ -111,7 +111,7 @@
 }
 
 .project-description {
-  color: rgba(11, 15, 16, 0.72);
+  color: var(--text-subtle);
   line-height: 1.6;
 }
 
