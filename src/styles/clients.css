@@ -1,0 +1,47 @@
+.clients-section {
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.clients-heading-wrap {
+  margin-bottom: 3rem;
+  padding: 0 1.5rem;
+}
+
+.clients-marquee-wrap {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.clients-marquee {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  white-space: nowrap;
+  padding: 0 2rem;
+}
+
+.client-item {
+  cursor: default;
+  font-family: var(--font-primary);
+  font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+  font-style: normal;
+  font-weight: 600;
+  color: rgba(11, 15, 16, 0.28);
+  transition: color 0.3s ease;
+}
+
+.client-item:hover {
+  color: var(--nearblack);
+}
+
+@media (min-width: 768px) {
+  .clients-heading-wrap {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .clients-marquee {
+    gap: 8rem;
+  }
+}

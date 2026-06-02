@@ -1,0 +1,115 @@
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: var(--rust);
+  border-bottom: 1px solid rgba(15, 139, 141, 0.7);
+  color: var(--offwhite);
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+}
+
+.site-header.is-scrolled {
+  background: linear-gradient(120deg, rgba(15, 139, 141, 0.56), rgba(15, 139, 141, 0.36));
+  backdrop-filter: blur(14px) saturate(145%);
+  border-bottom: 1px solid rgba(15, 139, 141, 0.5);
+  box-shadow: 0 8px 22px rgba(15, 139, 141, 0.18);
+  color: var(--offwhite);
+}
+
+.brand-link {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mobile-nav-panel {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 1rem;
+  right: 1rem;
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 1rem;
+  background: rgba(15, 139, 141, 0.82);
+  backdrop-filter: blur(16px) saturate(150%);
+  box-shadow: 0 18px 40px rgba(11, 15, 16, 0.18);
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1rem;
+  border-radius: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--offwhite);
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(0.15rem);
+  opacity: 1;
+}
+
+.nav-link,
+.menu-button {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.menu-button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.brand-link:hover,
+.nav-link:hover,
+.menu-button:hover {
+  opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+  .site-header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .main-nav {
+    display: flex;
+  }
+
+  .mobile-nav-panel {
+    display: none;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}

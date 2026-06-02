@@ -1,0 +1,144 @@
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 1.5rem 5rem;
+}
+
+.hero-content {
+  max-width: 80rem;
+}
+
+.hero-status {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.status-dot-wrap {
+  position: relative;
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.status-dot-ping,
+.status-dot-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--rust);
+}
+
+.status-dot-ping {
+  opacity: 0.35;
+  animation: pulseDot 1.8s ease-out infinite;
+}
+
+.hero-status-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-title {
+  margin-bottom: 2rem;
+  font-size: clamp(2.75rem, 8vw, 6.5rem);
+  line-height: 1.08;
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+.hero-muted-italic {
+  font-style: normal;
+  color: var(--rust);
+  font-weight: 600;
+}
+
+.hero-break {
+  display: none;
+}
+
+.hero-description {
+  max-width: 40rem;
+  color: rgba(11, 15, 16, 0.8);
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+.hero-scroll-wrap {
+  position: absolute;
+  bottom: 3rem;
+  left: 1.5rem;
+}
+
+.hero-scroll-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.hero-scroll-link:hover {
+  color: var(--nearblack);
+}
+
+.hero-scroll-icon {
+  animation: floatArrow 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.45;
+  }
+
+  70% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes floatArrow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(0.35rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .hero-break {
+    display: block;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+  }
+
+  .hero-scroll-wrap {
+    left: 3rem;
+  }
+}

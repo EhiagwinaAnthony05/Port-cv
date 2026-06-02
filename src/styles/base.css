@@ -1,0 +1,104 @@
+:root {
+  --offwhite: #ffffff;
+  --nearblack: #0b0f10;
+  --rust: #0f8b8d;
+  --muted: #6f7f87;
+  --border: #dde5e8;
+  --font-primary: 'Sage Grotesk', 'Poppins', sans-serif;
+  --font-secondary: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--offwhite);
+  color: var(--nearblack);
+  font-family: var(--font-secondary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-primary);
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.section-padding {
+  padding: 6rem 1.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: var(--font-primary);
+  font-weight: 600;
+}
+
+.section-counter,
+.meta-heading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-counter {
+  display: none;
+}
+
+.meta-heading {
+  margin-bottom: 0.75rem;
+}
+
+::selection {
+  background: var(--rust);
+  color: #fff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .section-counter {
+    display: block;
+  }
+}

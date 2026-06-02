@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import './styles/base.css';
+@import './styles/header.css';
+@import './styles/hero.css';
+@import './styles/work.css';
+@import './styles/about.css';
+@import './styles/clients.css';
+@import './styles/contact.css';
