@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import PropTypes from 'prop-types';
+import { brandContent, navigationLinks } from '../content/siteContent';
 
 export function Header({ theme, onToggleTheme }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,20 +65,15 @@ export function Header({ theme, onToggleTheme }) {
       <a
         href="#"
         className="brand-link">
-        
-        EHIAGWINA ANTHONY 
+        {brandContent.displayName}
       </a>
 
       <nav className="main-nav">
-        <a href="#work" className="nav-link">
-          Work
-        </a>
-        <a href="#about" className="nav-link">
-          About
-        </a>
-        <a href="#contact" className="nav-link">
-          Contact
-        </a>
+        {navigationLinks.map((link) =>
+        <a key={link.href} href={link.href} className="nav-link">
+            {link.label}
+          </a>
+        )}
       </nav>
 
       <div className="header-controls">
@@ -128,15 +124,11 @@ export function Header({ theme, onToggleTheme }) {
           duration: 0.2,
           ease: 'easeOut'
         }}>
-        <a href="#work" className="mobile-nav-link" onClick={closeMenu}>
-          Work
-        </a>
-        <a href="#about" className="mobile-nav-link" onClick={closeMenu}>
-          About
-        </a>
-        <a href="#contact" className="mobile-nav-link" onClick={closeMenu}>
-          Contact
-        </a>
+        {navigationLinks.map((link) =>
+        <a key={link.href} href={link.href} className="mobile-nav-link" onClick={closeMenu}>
+            {link.label}
+          </a>
+        )}
         <button
           type="button"
           className="mobile-nav-link mobile-theme-button"

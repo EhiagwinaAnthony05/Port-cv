@@ -1,12 +1,8 @@
-import { motion } from 'framer-motion';
-const clients = [
-'MOVE X XPRESS',
-'COMING SOON',
-'COMING SOON',
-'COMING SOON',
-'COMING SOON',
-'COMING SOON'];
+import { motion, useReducedMotion } from 'framer-motion';
+import { clients } from '../content/siteContent';
 export function Clients() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="clients-section section-padding">
       <div className="clients-heading-wrap">
@@ -18,10 +14,10 @@ export function Clients() {
       <div className="clients-marquee-wrap">
         <motion.div
           className="clients-marquee"
-          animate={{
+          animate={prefersReducedMotion ? undefined : {
             x: ['0%', '-50%']
           }}
-          transition={{
+          transition={prefersReducedMotion ? undefined : {
             repeat: Infinity,
             ease: 'linear',
             duration: 20

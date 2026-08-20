@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { contactContent } from '../content/siteContent';
 export function Contact() {
   return (
     <section
@@ -24,15 +25,15 @@ export function Contact() {
         className="contact-main">
         
         <h2 className="contact-title">
-          Let&apos;s build <br />
-          <span className="hero-muted-italic">something</span> together.
+          {contactContent.titlePrefix} <br />
+          <span className="hero-muted-italic">{contactContent.titleAccent}</span>{' '}
+          {contactContent.titleSuffix}
         </h2>
 
         <a
-          href="mailto:ehis.pele10@gmail.com"
+          href={`mailto:${contactContent.email}`}
           className="contact-email group">
-          
-          ehis.pele10@gmail.com
+          {contactContent.email}
           <ArrowUpRight
             className="contact-email-icon"
             size={32} />
@@ -46,31 +47,17 @@ export function Contact() {
             Socials
           </h4>
           <div className="contact-socials">
-            <a href="https://wa.me/2348115809354" className="social-link">
-              WhatsApp
-            </a>
-            <a href="https://instagram.com/heistony0510" className="social-link">
-              Instagram
-            </a>
-            <a href="https://facebook.com/" className="social-link">
-              Facebook
-            </a>
-            <a href="https://x.com/heistony0510?s=21" className="social-link">
-              Twitter
-            </a>
-            <a href="https://www.linkedin.com/in/ehis-pele-10" className="social-link">
-              LinkedIn
-            </a>
-            <a href="https://github.com/EhiagwinaAnthony05" className="social-link">
-              GitHub
-            </a>
-    
+            {contactContent.socials.map((social) =>
+            <a key={social.label} href={social.href} className="social-link">
+                {social.label}
+              </a>
+            )}
           </div>
         </div>
 
         <div className="contact-credit">
-          <p>© {new Date().getFullYear()} EHIAGWINA ANTHONYY </p>
-          <p>Designed in Lagos, Nigeria</p>
+          <p>© {new Date().getFullYear()} {contactContent.footerName}</p>
+          <p>{contactContent.footerLocation}</p>
         </div>
       </div>
     </section>);

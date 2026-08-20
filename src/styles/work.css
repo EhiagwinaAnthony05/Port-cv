@@ -9,7 +9,7 @@
 .work-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .project-card {
@@ -18,17 +18,28 @@
 
 .project-media-wrap {
   position: relative;
-  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
   overflow: hidden;
-  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(211, 230, 228, 0.28));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
   aspect-ratio: 4 / 3;
 }
 
 .project-image {
+  display: block;
   width: 100%;
+  max-width: 92%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s ease;
+  object-position: center;
+  border-radius: 1rem;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
 }
 
 .project-overlay {
@@ -99,24 +110,57 @@
 }
 
 .project-content-row {
+  width: 100%;
+}
+
+.project-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.project-header-row {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
   align-items: flex-start;
+  gap: 1rem;
 }
 
 .project-title {
-  margin-bottom: 0.5rem;
-  font-size: 1.6rem;
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  max-width: 68%;
 }
 
 .project-description {
   color: var(--text-subtle);
   line-height: 1.6;
+  font-size: 1.15rem;
+  max-width: 44rem;
+}
+
+.project-impact {
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 44rem;
+}
+
+.project-role {
+  margin-left: auto;
+  padding-top: 0.4rem;
+  white-space: normal;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: right;
+  max-width: 16rem;
 }
 
 .project-live-link {
-  margin-top: 1rem;
+  margin-top: 0.35rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -180,26 +224,38 @@
     padding: 0.35rem 0.65rem;
   }
 
-  .project-content-row {
+  .project-copy {
+    gap: 0.75rem;
+  }
+
+  .project-header-row {
     flex-direction: column;
-    gap: 0.85rem;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 
   .project-role {
     margin-left: 0;
-    white-space: normal;
+    padding-top: 0;
+    text-align: left;
+    max-width: none;
   }
 
   .project-title {
-    font-size: 1.35rem;
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
+    max-width: none;
   }
 
   .project-description {
-    font-size: 0.96rem;
+    font-size: 1rem;
+  }
+
+  .project-impact {
+    font-size: 0.92rem;
   }
 
   .project-live-link {
-    margin-top: 0.9rem;
+    margin-top: 0.25rem;
   }
 }
 

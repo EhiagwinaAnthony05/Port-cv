@@ -1,47 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
-const projects = [
-{
-  id: 1,
-  title: 'MoveX Xpress Logistics Platform',
-  role: 'Product Strategy • UX/UI • Frontend • 2026',
-  description:
-  'A unified logistics platform for booking, shipment tracking, route intelligence, and dispatch visibility across web and mobile devices. Built to reduce delivery friction, improve live operational control, and give both customers and internal teams a faster decision loop.',
-  image: '/assets/work/move-x mockup.png',
-  size: 'large',
-  comingSoon: false,
-  url: 'https://move-x-xpress-2e2r.vercel.app/'
-},
-{
-  id: 2,
-  title: 'Confidential Project Slot',
-  role: 'Coming Soon',
-  description: 'A new case study will be published here shortly.',
-  image:
-  'https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=2070&auto=format&fit=crop',
-  size: 'small',
-  comingSoon: true
-},
-{
-  id: 3,
-  title: 'Confidential Project Slot',
-  role: 'Coming Soon',
-  description: 'A new case study will be published here shortly.',
-  image:
-  'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop',
-  size: 'small',
-  comingSoon: true
-},
-{
-  id: 4,
-  title: 'Confidential Project Slot',
-  role: 'Coming Soon',
-  description: 'A new case study will be published here shortly.',
-  image:
-  'https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2070&auto=format&fit=crop',
-  size: 'large',
-  comingSoon: true
-}];
+import { projects } from '../content/siteContent';
 
 export function Work() {
   return (
@@ -49,9 +8,9 @@ export function Work() {
       <div className="work-header">
         <h2 className="section-title">Selected Work</h2>
         <span className="section-counter">
-          (04)
+          ({String(projects.length).padStart(2, '0')})
         </span>
-      </div>
+      </div> 
 
       <div className="work-grid">
         {projects.map((project, index) => {
@@ -104,9 +63,18 @@ export function Work() {
               </div>
 
               <div className="project-content-row">
-                <div>
-                  <h3 className="project-title">{project.title}</h3>
+                <div className="project-copy">
+                  <div className="project-header-row">
+                    <h3 className="project-title">{project.title}</h3>
+                    <span className="project-role">
+                      {project.role}
+                    </span>
+                  </div>
+
                   <p className="project-description">{project.description}</p>
+                  {project.impact ? (
+                    <p className="project-impact">{project.impact}</p>
+                  ) : null}
                   {project.url ?
                   <a
                     href={project.url}
@@ -118,9 +86,6 @@ export function Work() {
                     </a> :
                   null}
                 </div>
-                <span className="project-role">
-                  {project.role}
-                </span>
               </div>
             </motion.div>);
 

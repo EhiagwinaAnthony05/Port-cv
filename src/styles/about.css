@@ -22,9 +22,30 @@
   color: var(--about-copy);
 }
 
+.skill-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--about-copy);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
 .about-side {
   display: grid;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .about-portrait-wrap {
@@ -32,6 +53,8 @@
   overflow: hidden;
   aspect-ratio: 3 / 4;
   background: var(--about-portrait-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
 }
 
 .about-portrait {
@@ -50,12 +73,18 @@
 
 .about-meta-stack {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.meta-card {
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .meta-text,
 .experience-list,
-.meta-capabilities,
 .contact-socials {
   font-size: 1.075rem;
 }
@@ -72,15 +101,11 @@
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  color: var(--about-copy);
 }
 
 .meta-muted {
   color: var(--muted);
-}
-
-.meta-capabilities {
-  line-height: 1.7;
-  color: var(--about-capabilities);
 }
 
 @media (min-width: 768px) {

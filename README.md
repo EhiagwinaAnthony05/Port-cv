@@ -53,6 +53,8 @@ src/
 		About.jsx
 		Clients.jsx
 		Contact.jsx
+	content/
+		siteContent.js
 	styles/
 		base.css
 		header.css
@@ -101,9 +103,9 @@ npm run preview
 
 ## Content Notes
 
-- Work items can be updated in `src/components/Work.jsx`
-- About narrative/profile details are in `src/components/About.jsx`
-- Contact email and social links are in `src/components/Contact.jsx`
+- Core portfolio copy, project entries, nav links, clients, and socials are centralized in `src/content/siteContent.js`
+- Section components in `src/components/` now render from the shared content module
+- Brand tokens and theme rules remain in `src/styles/base.css`
 
 ## Deployment
 

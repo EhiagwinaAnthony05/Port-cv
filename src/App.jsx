@@ -6,14 +6,16 @@ import { About } from './components/About';
 import { Clients } from './components/Clients';
 import { Contact } from './components/Contact';
 
-export function App() {
-  const [theme, setTheme] = useState('light');
+function getInitialTheme() {
+  if (typeof window === 'undefined') {
+    return 'light';
+  }
 
-  useEffect(() => {
-    const savedTheme = window.localStorage.getItem('theme');
-    const nextTheme = savedTheme === 'dark' ? 'dark' : 'light';
-    setTheme(nextTheme);
-  }, []);
+  return window.localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+}
+
+export function App() {
+  const [theme, setTheme] = useState(getInitialTheme);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
