@@ -89,7 +89,7 @@ export const projects = [
   }
 ];
 
-export const clients = ['MOVE X XPRESS', 'COMING SOON', 'COMING SOON', 'COMING SOON', 'COMING SOON', 'COMING SOON'];
+export const clients = ['MOVE X XPRESS', 'EHINOVA HUB', 'COMING SOON', 'COMING SOON', 'COMING SOON', 'COMING SOON'];
 
 export const contactContent = {
   email: 'ehis.pele10@gmail.com',
