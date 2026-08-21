@@ -13,6 +13,13 @@
   transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
 }
 
+@media (min-width: 640px) {
+  .site-header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .site-header.is-scrolled {
   background: var(--header-scrolled-bg);
   border-bottom: 1px solid var(--header-scrolled-border);
@@ -175,5 +182,12 @@
 
   .menu-button {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
   }
 }

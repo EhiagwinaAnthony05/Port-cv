@@ -175,11 +175,14 @@
   text-decoration: underline;
 }
 
-.project-role {
-  margin-left: 1rem;
-  white-space: nowrap;
-  font-size: 0.8rem;
-  color: var(--muted);
+@media (min-width: 640px) {
+  .project-content-row {
+    margin-top: 0.5rem;
+  }
+
+  .project-media-wrap {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -280,5 +283,16 @@
   .project-media-wrap {
     height: 37.5rem;
     aspect-ratio: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-title {
+    max-width: 60%;
+  }
+
+  .project-description,
+  .project-impact {
+    max-width: 48rem;
   }
 }

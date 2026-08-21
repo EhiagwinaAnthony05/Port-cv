@@ -85,7 +85,7 @@ export const projects = [
     image: '/assets/work/ehinova-hub.png',
     size: 'large',
     comingSoon: false,
-    url: null
+    url: 'https://ehinovahub.vercel.app/'
   }
 ];
 

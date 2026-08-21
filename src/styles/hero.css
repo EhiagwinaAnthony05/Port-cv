@@ -7,6 +7,13 @@
   padding: 8rem 1.5rem 5rem;
 }
 
+@media (min-width: 640px) {
+  .hero-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
 .hero-content {
   max-width: 82rem;
   padding: 1rem 0 0;
@@ -206,5 +213,16 @@
 
   .hero-scroll-wrap {
     left: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 92vh;
+    padding-top: 10rem;
+  }
+
+  .hero-content {
+    max-width: 72rem;
   }
 }

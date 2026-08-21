@@ -130,7 +130,7 @@ p {
 }
 
 .section-padding {
-  padding: 6rem 1.5rem;
+  padding: 5rem 1.25rem;
 }
 
 .section-title {
@@ -138,6 +138,13 @@ p {
   font-family: var(--font-primary);
   font-weight: 600;
   letter-spacing: -0.06em;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .section-counter,
@@ -179,6 +186,13 @@ p {
 
   .section-counter {
     display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 }
 
